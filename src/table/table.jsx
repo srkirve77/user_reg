@@ -12,23 +12,19 @@ import TableHeader from './tablehead/tablehead'
 import './table.css'
 
 const useStyles = makeStyles({
-  root: {
-    backgroundColor : 'blue',
-  },
-  stickyposition : {
-    position:'sticky'
+  roundborder : {
+      borderRadius:'30px',
   }
 });
 
 const UserTable = () => {
-
-    const classes = useStyles();
+    const classes = useStyles()
 
     return (
         <div>
             <Paper className = "userpaper">
-             <Table>
-                <TableHeader/>    
+             <Table stickyHeader className={classes.roundborder}>
+                <TableHeader/>
                 <UserList/>      
             </Table>
             </Paper>
