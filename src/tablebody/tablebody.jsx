@@ -8,17 +8,18 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import './tablebody.css'
 
 
-const UserList = ({pageNo}) => {
-    const [users, setUsers] = useState([''])
+const UserList = ({pageNo, getTotalPages}) => {
+    const [users, setUsers] = useState()
 
- useEffect(  () => {
+ useEffect(() => {
         getUsers()
     })
 
     async function getUsers() {
-            if(typeof pageNo !== 'undefined')
-            {var users = await fetchUsers(pageNo)  
-            setUsers(users)}
+            var data = await fetchUsers(pageNo)  
+            setUsers(data.data)
+            getTotalPages(data.meta.pagination.pages)
+
     }
 
     return (

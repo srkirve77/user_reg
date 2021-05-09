@@ -1,4 +1,4 @@
-const fetchUsers = async({pageNo}) => {
+const fetchUsers = async(pageNo) => {
     const res = await fetch('https://gorest.co.in/public-api/users?page='+pageNo,{})
     const data = await res.json()
     if(parseInt(data.code/100)!==2) {
@@ -10,7 +10,7 @@ const fetchUsers = async({pageNo}) => {
         alert(msg)
     }
     // /console.log(data)
-    return data.data
+    return data
 }
 
 export default fetchUsers

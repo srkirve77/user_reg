@@ -5,21 +5,23 @@ import Pagination from '../pagination/pagination'
 import { useState, useEffect } from 'react';
 
 const UserRegistry = () => {
-    const [pageNo, setPageNo] = useState()
+    const [pageNo, setPageNo] = useState(1)
+    const [totalPages, setTotalPage] = useState(70)
 
     const onEnter = (onPage) => {
-        if(onPage !== null)
-        {
-            setPageNo(onPage)
-            console.log(pageNo)
-        }
+        console.log(onPage)
+        setPageNo(onPage)    
+    }
+
+    const onTotalPage = (getTotalPages) => {
+        setTotalPage(getTotalPages)
     }
 
     return (
         <div>
         <div className = "sidebar"/>
-        <UserTable pageNo = {pageNo}/>
-        <Pagination onPage = {onEnter}/>
+        <UserTable pageNo = {pageNo} getTotalPages = {onTotalPage}/>
+        <Pagination onPage = {onEnter} currentPage = {pageNo} totalPages = {totalPages}/>
         </div>
     )
 }
