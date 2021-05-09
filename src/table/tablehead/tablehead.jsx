@@ -20,6 +20,7 @@ const TableHeader = () => {
     return (
         <TableHead>
             <TableRow>
+                <TableCell className = {classes.root} align="center">Id</TableCell>
                 <TableCell className = {classes.root} align="center">Name</TableCell>
                 <TableCell className = {classes.root} align="center">Email</TableCell>
                 <TableCell className = {classes.root} align="center">Gender</TableCell>

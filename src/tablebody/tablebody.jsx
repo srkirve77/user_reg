@@ -7,18 +7,23 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import './tablebody.css'
 
-const UserList = () => {
-    const [pageNo, setPageNo] = useState(1)
-    const [users, setUsers] = useState()
 
-    useEffect(() => {
+const UserList = ({pageNo}) => {
+    const [users, setUsers] = useState(['its loading'])
+
+ useEffect(  () => {
         setInterval(() => {
-            getUsers();
-          }, 5000);    })
+            console.log(pageNo)
+            if(pageNo!==null)
+                {
+                    getUsers(pageNo);
+                }
+         }, 2000);
+    })
 
-    const getUsers = async () => {
-        var users = await fetchUsers()
-        setUsers(users)
+    async function getUsers(pageNo) {
+            var users = await fetchUsers(pageNo)
+            setUsers(users)
     }
 
     return (
@@ -27,7 +32,8 @@ const UserList = () => {
                 { 
                 users && users.map( (user) => 
                 (
-                    <TableRow>
+                    <TableRow key = {user.id}>
+                        <TableCell align="center">{user.id}</TableCell>
                         <TableCell align="center">{user.name}</TableCell>
                         <TableCell align="center">{user.email}</TableCell>
                         <TableCell align="center">{user.gender}</TableCell>

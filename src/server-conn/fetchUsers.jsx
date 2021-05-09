@@ -1,9 +1,15 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-
-const fetchUsers = async() => {
-    const res = await fetch('https://gorest.co.in/public-api/users?page=1',{})
+const fetchUsers = async({pageNo}) => {
+    const res = await fetch('https://gorest.co.in/public-api/users?page='+pageNo,{})
     const data = await res.json()
+    if(parseInt(data.code/100)!==2) {
+        var i;
+        var msg = ""
+        for(i = 0 ; i < data.data.length ; i++) {
+            msg = msg + data.data[i].field +" "+data.data[i].message +","
+        }
+        alert(msg)
+    }
+    // /console.log(data)
     return data.data
 }
 

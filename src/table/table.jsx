@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   }
 });
 
-const UserTable = () => {
+const UserTable = (pageNo) => {
     const classes = useStyles()
 
     return (
@@ -25,7 +25,7 @@ const UserTable = () => {
             <Paper className = "userpaper">
              <Table stickyHeader className={classes.roundborder}>
                 <TableHeader/>
-                <UserList/>      
+                <UserList pageNo = {pageNo}/>      
             </Table>
             </Paper>
         </div>
