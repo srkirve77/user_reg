@@ -9,15 +9,16 @@ import './tablebody.css'
 
 
 const UserList = ({pageNo}) => {
-    const [users, setUsers] = useState(['its loading'])
+    const [users, setUsers] = useState([''])
 
  useEffect(  () => {
         getUsers()
     })
 
-    async function getUsers(pageNo) {
-            var users = await fetchUsers(pageNo)
-            setUsers(users)
+    async function getUsers() {
+            if(typeof pageNo !== 'undefined')
+            {var users = await fetchUsers(pageNo)  
+            setUsers(users)}
     }
 
     return (
