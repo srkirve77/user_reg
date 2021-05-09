@@ -3,6 +3,7 @@ import UserTable from '../table/table'
 import './homepage'
 import Pagination from '../pagination/pagination'
 import { useState, useEffect } from 'react';
+import AddUser from '../add-user/adduser';
 
 const UserRegistry = () => {
     const [pageNo, setPageNo] = useState(1)
@@ -20,6 +21,7 @@ const UserRegistry = () => {
     return (
         <div>
         <div className = "sidebar"/>
+        <AddUser/>
         <UserTable pageNo = {pageNo} getTotalPages = {onTotalPage}/>
         <Pagination onPage = {onEnter} currentPage = {pageNo} totalPages = {totalPages}/>
         </div>
