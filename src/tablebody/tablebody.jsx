@@ -12,13 +12,7 @@ const UserList = ({pageNo}) => {
     const [users, setUsers] = useState(['its loading'])
 
  useEffect(  () => {
-        setInterval(() => {
-            console.log(pageNo)
-            if(pageNo!==null)
-                {
-                    getUsers(pageNo);
-                }
-         }, 2000);
+        getUsers()
     })
 
     async function getUsers(pageNo) {
