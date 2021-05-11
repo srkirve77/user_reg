@@ -1,7 +1,9 @@
 .editicon{
     opacity: 0.7;
+    cursor: pointer;
 }
 
 .deleteicon{
     opacity: 0.7;
+    cursor: pointer;
 }
