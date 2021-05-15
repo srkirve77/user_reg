@@ -1,11 +1,16 @@
 import React from 'react'
-import './pagination.css'
+import ReactDOM from 'react-dom';
+//import './pagination.css'
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import fetchUsers from '../server-conn/fetchUsers'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+=======
+//import fetchUsers from '../server-conn/fetchUsers'
+>>>>>>> d598f9650136586d826caddd0f2e496681372510
 
 const useStyles = makeStyles({
     root: {
