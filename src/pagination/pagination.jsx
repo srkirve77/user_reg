@@ -1,7 +1,8 @@
 import React from 'react'
-import './pagination.css'
+import ReactDOM from 'react-dom';
+//import './pagination.css'
 import { useState, useEffect } from 'react';
-import fetchUsers from '../server-conn/fetchUsers'
+//import fetchUsers from '../server-conn/fetchUsers'
 
 const Pagination = ({onPage}) => {
    
