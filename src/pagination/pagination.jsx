@@ -1,16 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-//import './pagination.css'
-import { useState, useEffect } from 'react';
-<<<<<<< HEAD
-import fetchUsers from '../server-conn/fetchUsers'
+import { useState } from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-=======
-//import fetchUsers from '../server-conn/fetchUsers'
->>>>>>> d598f9650136586d826caddd0f2e496681372510
 
 const useStyles = makeStyles({
     root: {
@@ -51,13 +44,13 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
         onPage(parseInt(page))
     }
 
-    const moveBackward = (e) => {
+    const moveBackward = () => {
         if(currentPage!==1)
             currentPage = currentPage - 1;
         onPage(parseInt(currentPage))
     }
 
-    const moveForward = (e) => {
+    const moveForward = () => {
         if(currentPage!== totalPages)
             currentPage = currentPage + 1;
         onPage(parseInt(currentPage))
@@ -66,13 +59,13 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
     return (
         <div>
             <div className = "pagination">    
-                <ArrowBackIosIcon className = {classes.backwardicon} onClick = { (e) =>   moveBackward(e)}/>
-                   <div className = "pagelabel"> page {currentPage} of {totalPages}</div>
-                <ArrowForwardIosIcon className = {classes.forwardicon} onClick = { (e) => moveForward(e)}/>
+                <ArrowBackIosIcon id = "backward-button" className = {classes.backwardicon} onClick = { () =>   moveBackward()}/>
+                   <div className = "pagelabel">page{currentPage}of{totalPages}</div>
+                <ArrowForwardIosIcon id = "forward-button" className = {classes.forwardicon} onClick = { () => moveForward()}/>
                 <Button variant="contained" color = "primary" className = {classes.root} onClick = {getPage}>
                     skip to
                 </Button>
-                <input type = "text" className = "skiptoinput" onChange = { (e) => setPage(e.target.value)}></input>
+                <input type = "number" className = "skiptoinput" onChange = { (e) => setPage(e.target.value)}></input>
             </div>
         </div>
     )

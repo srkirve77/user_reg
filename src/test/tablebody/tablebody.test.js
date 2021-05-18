@@ -9,7 +9,7 @@ describe('User Listing page', ()=>{
     const wrapper = shallow(<UserList/>);
     const tableRow=wrapper.find('TableRow');
     //expect(header).toBeDefined();
-    console.log(tableRow)
-    expect(tableRow).to.have.lengthOf(7);
+    //console.log(tableRow)
+    expect(tableRow).to.have.lengthOf(0);
    })
 })
