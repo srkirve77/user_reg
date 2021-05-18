@@ -62,13 +62,13 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
     return (
         <div>
             <div className = "pagination">    
-                <ArrowBackIosIcon className = {classes.backwardicon} onClick = { (e) =>   moveBackward(e)}/>
-                   <div className = "pagelabel"> page {currentPage} of {totalPages}</div>
-                <ArrowForwardIosIcon className = {classes.forwardicon} onClick = { (e) => moveForward(e)}/>
+                <ArrowBackIosIcon id = "#backward-button" className = {classes.backwardicon} onClick = { (e) =>   moveBackward(e)}/>
+                   <div className = "pagelabel">page{currentPage}of{totalPages}</div>
+                <ArrowForwardIosIcon id ="#forward-button" className = {classes.forwardicon} onClick = { (e) => moveForward(e)}/>
                 <Button variant="contained" color = "primary" className = {classes.root} onClick = {getPage}>
                     skip to
                 </Button>
-                <input type = "text" className = "skiptoinput" onChange = { (e) => setPage(e.target.value)}></input>
+                <input type = "number" className = "skiptoinput" onChange = { (e) => setPage(e.target.value)}></input>
             </div>
         </div>
     )
