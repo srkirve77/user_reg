@@ -37,13 +37,14 @@ describe('Pagination', ()=>{
 
    it('The text in label should be according currentpage and totalpage',()=>{
     const label = tree.find('div.pagelabel').text();
-    console.log(label);
     expect(label).to.equal('page1of10');
    }),
 
    it('After clicking on Back button when current page is at 1 it should Not  call onPage',()=>{
-    //const tree.find("#forward-button");
-    //console.log(tree.find("#forward-button").props().onClick());
+      tree = shallow(<Pagination onPage = {onPage} currentPage = {currentPage} totalPages = {totalPages}/>);
+      const button = tree.find("#backward-button").props();
+      console.log(button);
+      console.log(tree.debug());
     //const button = tree.find("#forward-button").props().onClick();
     //const label = tree.find('div.pagelabel').text();
     //console.log(label);

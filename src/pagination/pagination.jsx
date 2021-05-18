@@ -62,9 +62,9 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
     return (
         <div>
             <div className = "pagination">    
-                <ArrowBackIosIcon id = "#backward-button" className = {classes.backwardicon} onClick = { (e) =>   moveBackward(e)}/>
+                <ArrowBackIosIcon id="backward-button" className = {classes.backwardicon} onClick = { (e) =>   moveBackward(e)}/>
                    <div className = "pagelabel">page{currentPage}of{totalPages}</div>
-                <ArrowForwardIosIcon id ="#forward-button" className = {classes.forwardicon} onClick = { (e) => moveForward(e)}/>
+                <ArrowForwardIosIcon id="forward-button" className = {classes.forwardicon} onClick = { (e) => moveForward(e)}/>
                 <Button variant="contained" color = "primary" className = {classes.root} onClick = {getPage}>
                     skip to
                 </Button>
