@@ -1,5 +1,5 @@
 import React from "react";
-import Pagination from'../../pagination/pagination'
+import Pagination from'../../src/pagination/pagination'
 import { shallow } from 'enzyme';
 import { ExpansionPanelActions } from "@material-ui/core";
 import { expect } from 'chai';

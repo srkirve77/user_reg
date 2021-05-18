@@ -1,5 +1,5 @@
 import React from "react";
-import UserList from'../../tablebody/tablebody'
+import UserList from'../../src/tablebody/tablebody'
 import { shallow } from 'enzyme';
 import { ExpansionPanelActions } from "@material-ui/core";
 import { expect } from 'chai';
