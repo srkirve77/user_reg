@@ -11,21 +11,22 @@ import './tablebody.css'
 const UserList = ({pageNo, getTotalPages}) => {
     const [users, setUsers] = useState()
 
- useEffect(() => {
+    useEffect(() => {
         getUsers()
     })
 
     async function getUsers() {
+            console.log("inside getUsers")
             var data = await fetchUsers(pageNo)  
             setUsers(data.data)
             getTotalPages(data.meta.pagination.pages)
-
     }
 
     return (
         <TableBody>
             
-                { 
+            {
+            console.log(users), 
                 users && users.map( (user) => 
                 (
                     <TableRow key = {user.id}>
