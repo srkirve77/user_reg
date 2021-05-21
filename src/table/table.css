@@ -1,0 +1,11 @@
+.userpaper {
+    margin-top:-80vh;
+    width:160vh;
+    margin-left:25vh;
+    height: 70vh;
+    overflow-y: auto;
+}
+
+#table{
+    border-radius: 100px;
+}
