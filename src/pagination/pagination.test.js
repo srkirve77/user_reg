@@ -1,10 +1,6 @@
 import React from "react";
 import Pagination from'./pagination'
 import { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import enzyme from 'enzyme';
-
-enzyme.configure({ adapter: new Adapter() })
 
 describe('Pagination', ()=>{
     

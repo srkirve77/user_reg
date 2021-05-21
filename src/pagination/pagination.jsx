@@ -42,8 +42,6 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
     const classes = useStyles()
 
     const getPage = () => {
-        if(isNaN(page))
-            page = 1
         onPage(parseInt(page))
     }
 
