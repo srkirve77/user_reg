@@ -24,9 +24,7 @@ const UserList = ({pageNo, getTotalPages}) => {
 
     return (
         <TableBody>
-            
             {
-            console.log(users), 
                 users && users.map( (user) => 
                 (
                     <TableRow key = {user.id}>
@@ -39,8 +37,7 @@ const UserList = ({pageNo, getTotalPages}) => {
                         <TableCell align="center"><DeleteForeverIcon className = "deleteicon"/></TableCell>
                     </TableRow>
                 )
-            )}      
-            
+            )}            
         </TableBody>
     )
 }

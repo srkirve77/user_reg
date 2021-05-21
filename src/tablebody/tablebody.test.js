@@ -3,6 +3,7 @@ import UserList from'./tablebody'
 import { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import enzyme from 'enzyme';
+import { TableBody } from "@material-ui/core";
 
 enzyme.configure({ adapter: new Adapter() })
 
@@ -19,9 +20,7 @@ describe('ListingUsers', ()=>{
      }),
 
      it('getUsers should have been called',()=>{
-          //tree.setProps({users : users});
-          //console.log(tree.debug());
-          //expect(getTotalPages).toBeCalledTimes(0);
+          expect(tree.find(TableBody).text()).toHaveLength(0);
      })
 
 })
