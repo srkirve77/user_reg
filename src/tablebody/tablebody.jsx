@@ -16,7 +16,6 @@ const UserList = ({pageNo, getTotalPages}) => {
     })
 
     async function getUsers() {
-            console.log("inside getUsers")
             var data = await fetchUsers(pageNo)  
             setUsers(data.data)
             getTotalPages(data.meta.pagination.pages)

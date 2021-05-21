@@ -9,7 +9,6 @@ const fetchUsers = async(pageNo) => {
         }
         alert(msg)
     }
-    // /console.log(data)
     return data
 }
 

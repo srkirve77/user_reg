@@ -9,7 +9,6 @@ const UserRegistry = () => {
     const [totalPages, setTotalPage] = useState(70)
 
     const onEnter = (onPage) => {
-        console.log(onPage)
         setPageNo(onPage)    
     }
 
