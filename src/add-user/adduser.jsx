@@ -12,7 +12,7 @@ const useStyles = makeStyles({
       width:150,
       fontWeight:'900',
       fontSize:'15px',
-      marginLeft:1540,
+      marginLeft:1495,
       marginTop : -1550,
     },
     addbutton: {

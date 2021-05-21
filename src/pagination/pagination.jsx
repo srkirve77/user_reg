@@ -4,7 +4,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-
+import './pagination.css'
 const useStyles = makeStyles({
     root: {
       background: '#4856FD',
@@ -60,7 +60,7 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
         <div>
             <div className = "pagination">    
                 <ArrowBackIosIcon id = "backward-button" className = {classes.backwardicon} onClick = { () =>   moveBackward()}/>
-                   <div className = "pagelabel">page{currentPage}of{totalPages}</div>
+                   <div className = "pagelabel"> page {currentPage} of {totalPages} </div>
                 <ArrowForwardIosIcon id = "forward-button" className = {classes.forwardicon} onClick = { () => moveForward()}/>
                 <Button variant="contained" color = "primary" className = {classes.root} onClick = {getPage}>
                     skip to
