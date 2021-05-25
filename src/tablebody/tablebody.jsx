@@ -17,22 +17,18 @@ const UserList = ({pageNo, getTotalPages}) => {
     const [users, setUsers] = useState()
 
     useEffect(() => {
-    //  setInterval(() => {
-    //      getUsers()
-    //  }, 3000);
         getUsers()
     })
 
     async function getUsers() {
-        var data = await fetchUsers(pageNo)  
-        setUsers(data.data)
-        getTotalPages(data.meta.pagination.pages)
+            var data = await fetchUsers(pageNo)  
+            setUsers(data.data)
+            getTotalPages(data.meta.pagination.pages)
     }
 
     return (
         <TableBody>
-            
-                { 
+            {
                 users && users.map( (user) => 
                 (
                     <TableRow key = {user.id}>
@@ -45,8 +41,7 @@ const UserList = ({pageNo, getTotalPages}) => {
                         <DeleteUser user = {user}/>
                     </TableRow>
                 )
-            )}      
-            
+            )}            
         </TableBody>
     )
 }
