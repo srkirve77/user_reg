@@ -52,9 +52,11 @@ const AddUserForm = ({CloseButton}) => {
     const onSubmit = async () => {
         const user = {name, email, gender, status}
         var data = await postUser(user)
-        console.log(data)
         if( parseInt(data.code/100) === 2 ) {
             CloseButton(false)
+        }
+        else {
+            alert('something went wrong please try again')
         }
     }
 
