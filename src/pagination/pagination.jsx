@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import './pagination.css'
 import { useState, useEffect } from 'react';
 import fetchUsers from '../server-conn/fetchUsers'
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
         cursor:'pointer',
         display: 'inline',
         marginTop: 10,
-        marginLeft:500,
+        marginLeft:400,
         height:15
     },
     forwardicon : {
@@ -41,33 +42,33 @@ const Pagination = ({onPage, currentPage, totalPages}) => {
     const classes = useStyles()
 
     const getPage = () => {
-        if(isNaN(page))
-            page = 1
         onPage(parseInt(page))
     }
 
-    const moveBackward = (e) => {
-        if(currentPage!==1)
+    const moveBackward = () => {
+        if(currentPage!==1) {
             currentPage = currentPage - 1;
-        onPage(parseInt(currentPage))
+            onPage(parseInt(currentPage))
+        }
     }
 
-    const moveForward = (e) => {
-        if(currentPage!== totalPages)
+    const moveForward = () => {
+        if(currentPage!== totalPages) {
             currentPage = currentPage + 1;
-        onPage(parseInt(currentPage))
+            onPage(parseInt(currentPage))
+        }
     }
 
     return (
         <div>
             <div className = "pagination">    
-                <ArrowBackIosIcon className = {classes.backwardicon} onClick = { (e) =>   moveBackward(e)}/>
-                   <div className = "pagelabel"> page {currentPage} of {totalPages}</div>
-                <ArrowForwardIosIcon className = {classes.forwardicon} onClick = { (e) => moveForward(e)}/>
+                <ArrowBackIosIcon id="backward-button" className = {classes.backwardicon} onClick = { () =>   moveBackward()}/>
+                   <div className = "pagelabel">page {currentPage} of {totalPages}</div>
+                <ArrowForwardIosIcon id="forward-button" className = {classes.forwardicon} onClick = { () => moveForward()}/>
                 <Button variant="contained" color = "primary" className = {classes.root} onClick = {getPage}>
                     skip to
                 </Button>
-                <input type = "text" className = "skiptoinput" onChange = { (e) => setPage(e.target.value)}></input>
+                <input type = "number" className = "skiptoinput" onChange = { (e) => setPage(e.target.value)}></input>
             </div>
         </div>
     )
