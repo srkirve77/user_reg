@@ -6,9 +6,11 @@ import Button from '@material-ui/core/Button';
 describe('Add User Form', ()=>{
     
     let tree;
+
+    const CloseButton = jest.fn();
     beforeEach(() => {
             jest.clearAllMocks();
-            tree = shallow(<AddUserForm />);
+            tree = shallow(<AddUserForm CloseButton = {CloseButton}/>);
     }),
 
     it('Verify Submit button text',()=>{
@@ -47,6 +49,16 @@ describe('Add User Form', ()=>{
         var emailInputField = tree.find('div.formfield').getElements()[1];
         var emailInputDiv = emailInputField.props.children[1];
         expect(emailInputDiv.props.type).toBe('text');
+    }),
+
+    it('Verify submit button click event when reponse code is no 2XX', () => {
+        tree.find("#submitbutton").props().onClick();
+        expect(CloseButton).toHaveBeenCalledTimes(0);
+    }),
+
+    it('Verify cancel button click event', () => {
+        tree.find("#cancelbutton").props().onClick();
+        expect(CloseButton).toHaveBeenCalledTimes(1);
     })
 
 })

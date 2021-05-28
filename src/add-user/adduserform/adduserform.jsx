@@ -52,8 +52,8 @@ const AddUserForm = ({CloseButton}) => {
     const onSubmit = async () => {
         const user = {name, email, gender, status}
         var data = await postUser(user)
-        console.log(data)
-        if( parseInt(data.code/100) === 2 ) {
+        var code = data.code/100;
+        if( parseInt(code) === 2 ) {
             CloseButton(false)
         }
     }
@@ -98,10 +98,10 @@ const AddUserForm = ({CloseButton}) => {
                         <option value="Active">Active</option>
                 </select>
             </div>
-            <Button variant="contained" color = "primary" className = {classes.submitbutton} onClick = {onSubmit}>
+            <Button variant="contained" id = "submitbutton" color = "primary" className = {classes.submitbutton} onClick = {onSubmit}>
                 Submit
             </Button>
-            <Button variant="contained" color = "secondary" className = {classes.cancelbutton} onClick={cancelForm} >
+            <Button variant="contained" id = "cancelbutton" color = "secondary" className = {classes.cancelbutton} onClick={cancelForm} >
                 Cancel
             </Button>
         </div>
