@@ -22,10 +22,11 @@
 }
 
 .skiptoinput{
-    width:4vh;
+    width:3vh;
     margin-left: 2vh;
     height: 3vh;
     margin-top: 1vh;
+    font-size: medium;
 }
 
 .pagination{
