@@ -11,7 +11,6 @@ import Modal from '@material-ui/core/Modal';
 import UpdateUserForm from '../updateuser/updateuserform/updateuserform';
 import Button from '@material-ui/core/Button';
 import UpdateUser from '../updateuser/updateuser'
-import DeleteUser from '../deleteuser/deleteuser'
 
 const UserList = ({pageNo, getTotalPages}) => {
     const [users, setUsers] = useState()
@@ -38,7 +37,7 @@ const UserList = ({pageNo, getTotalPages}) => {
                         <TableCell align="center">{user.gender}</TableCell>
                         <TableCell align="center">{user.status}</TableCell>
                         <UpdateUser user = {user}/>
-                        <DeleteUser user = {user}/>
+                        <TableCell align="center"><DeleteForeverIcon className = "deleteicon"/></TableCell>
                     </TableRow>
                 )
             )}            

@@ -1,5 +1,4 @@
 const putUser = async (user) => {
-    console.log(user)
     const res = await
         fetch('https://gorest.co.in/public-api/users/'+user.id,
         {
@@ -11,15 +10,6 @@ const putUser = async (user) => {
             body: JSON.stringify(user),
         })
     const data = await res.json()
-    console.log(data)
-    if( parseInt(data.code/100)!==2) {
-        var i;
-        var msg = ""
-        for(i = 0 ; i < data.data.length ; i++) {
-            msg = msg + data.data[i].field +" "+data.data[i].message +","
-        }
-        alert(msg)
-    }
     return data
 }
 

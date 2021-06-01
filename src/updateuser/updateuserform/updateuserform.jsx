@@ -53,8 +53,7 @@ const UpdateUserForm = ({CloseButton, user}) => {
     const onSubmit = async () => {
         const user = {id, name, email, gender, status}
         var data = await putUser(user)
-        console.log(data)
-        if( parseInt(data.code/100) === 2 ) {
+        if(  data.code === 200 ) {
             CloseButton(false)
         }
     }
@@ -99,10 +98,10 @@ const UpdateUserForm = ({CloseButton, user}) => {
                         <option value="Active">Active</option>
                 </select>
             </div>
-            <Button variant="contained" color = "primary" className = {classes.submitbutton} onClick = {onSubmit}>
+            <Button variant="contained" id = "savebutton" color = "primary" className = {classes.submitbutton} onClick = {onSubmit}>
                 Save
             </Button>
-            <Button variant="contained" color = "secondary" className = {classes.cancelbutton} onClick={cancelForm} >
+            <Button variant="contained" id = "cancelbutton" color = "secondary" className = {classes.cancelbutton} onClick={cancelForm} >
                 Cancel
             </Button>
         </div>
