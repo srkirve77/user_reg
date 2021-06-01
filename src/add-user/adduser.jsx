@@ -41,7 +41,7 @@ const AddUser = () => {
         <Button variant="contained" color = "primary" className = {classes.root} onClick={handleOpen}>
             <AddIcon className = {classes.addbutton} />Add User
         </Button>
-        <Modal
+         <Modal
          open = {open}
          onClose={handleClose}
          aria-labelledby="simple-modal-title"
