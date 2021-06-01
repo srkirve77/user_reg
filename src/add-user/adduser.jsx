@@ -12,7 +12,7 @@ const useStyles = makeStyles({
       width:150,
       fontWeight:'900',
       fontSize:'15px',
-      marginLeft:1540,
+      marginLeft:1495,
       marginTop : -1550,
     },
     addbutton: {
@@ -41,7 +41,7 @@ const AddUser = () => {
         <Button variant="contained" color = "primary" className = {classes.root} onClick={handleOpen}>
             <AddIcon className = {classes.addbutton} />Add User
         </Button>
-         <Modal
+        <Modal
          open = {open}
          onClose={handleClose}
          aria-labelledby="simple-modal-title"

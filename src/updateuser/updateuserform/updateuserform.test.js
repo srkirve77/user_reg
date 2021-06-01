@@ -1,19 +1,21 @@
 import React from "react";
-import AddUserForm from'./adduserform'
+import UpdateUserForm from'./updateuserform'
 import { shallow } from 'enzyme';
 import Button from '@material-ui/core/Button';
 
-describe('Add User Form', ()=>{
+describe('Update User Form', ()=>{
     
     let tree;
+    const CloseButton = jest.fn()
+    const user = { "id":1, "name":"sam", "email":"abc", "gender":"male", "status":"active"}
     beforeEach(() => {
             jest.clearAllMocks();
-            tree = shallow(<AddUserForm />);
+            tree = shallow(<UpdateUserForm CloseButton = {CloseButton} user = {user}/>);
     }),
 
-    it('Verify Submit button text',()=>{
+    it('Verify Save button text',()=>{
         var submitButton = tree.find(Button).getElements()[0];
-        expect(submitButton.props.children).toBe('Submit');
+        expect(submitButton.props.children).toBe('Save');
     }),
 
     it('Verify Cancel button text',()=>{
