@@ -1,10 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import './adduserform.css'
+import './updateuserform.css'
 import { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import '../../server-conn/postUser';
-import postUser from '../../server-conn/postUser';
+import putUser from '../../server-conn/putUser';
 
 const useStyles = makeStyles({
     paper:{
@@ -37,12 +37,13 @@ const useStyles = makeStyles({
       },
 })
 
-const AddUserForm = ({CloseButton}) => {
+const UpdateUserForm = ({CloseButton, user}) => {
     const classes = useStyles()
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [gender, setGender] = useState('Male')
-    const [status, setStatus] = useState('Inactive')
+    const [id, setUserId] = useState(user.id)
+    const [name, setName] = useState(user.name)
+    const [email, setEmail] = useState(user.email)
+    const [gender, setGender] = useState(user.gender)
+    const [status, setStatus] = useState(user.status)
     
 
     const cancelForm = () => {
@@ -50,16 +51,16 @@ const AddUserForm = ({CloseButton}) => {
     }
 
     const onSubmit = async () => {
-        const user = {name, email, gender, status}
-        var data = await postUser(user)
-        if( data.code === 200 ) {
+        const user = {id, name, email, gender, status}
+        var data = await putUser(user)
+        if(  data.code === 200 ) {
             CloseButton(false)
         }
     }
 
     return (
         <div className = {classes.paper}>
-            <h1 className="header">Add User Form</h1>
+            <h1 className="header">Update User Form</h1>
             <div className = "formfield">
                 <label className = "inputlabel">Name</label>
                 <input type='text' className="nameinputfield" placeholder='enter your name'
@@ -97,8 +98,8 @@ const AddUserForm = ({CloseButton}) => {
                         <option value="Active">Active</option>
                 </select>
             </div>
-            <Button variant="contained" id = "submitbutton" color = "primary" className = {classes.submitbutton} onClick = {onSubmit}>
-                Submit
+            <Button variant="contained" id = "savebutton" color = "primary" className = {classes.submitbutton} onClick = {onSubmit}>
+                Save
             </Button>
             <Button variant="contained" id = "cancelbutton" color = "secondary" className = {classes.cancelbutton} onClick={cancelForm} >
                 Cancel
@@ -107,4 +108,4 @@ const AddUserForm = ({CloseButton}) => {
     )
 }
 
-export default AddUserForm
+export default UpdateUserForm

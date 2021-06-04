@@ -1,0 +1,41 @@
+.header{
+    margin-left: 20vh;
+    margin-bottom: 5vh;
+}
+
+.inputlabel{
+    font-size: 2vh;
+    margin-left: 13vh;
+    margin-bottom: 10px;
+    margin-right: 2vh;
+    font-weight: 400;
+}
+
+.formfield{
+    margin-bottom: 2vh;
+}
+
+.nameinputfield{
+    margin-left: 4vh;
+    width:30vh;
+    height: 2vh;
+    font-size: 2vh;
+}
+.emailinputfield{
+    margin-left: 4.4vh;
+    width:30vh;
+    height: 2vh;
+    font-size: 2vh;
+}
+.genderinputfield{
+    margin-left: 2.5vh;
+    width:15vh;
+    height: 2.5vh;
+    font-size: 2vh;
+}
+.statusinputfield{
+    margin-left: 3.4vh;
+    width:15vh;
+    height: 2.5vh;
+    font-size: 2vh;
+}
